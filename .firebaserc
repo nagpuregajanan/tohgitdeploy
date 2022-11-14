@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "tohdeploy-765d8"
+  },
+  "targets": {
+    "tohdeploy-765d8": {
+      "hosting": {
+        "tohgitdeploy": [
+          "tohdeploy-765d8"
+        ]
+      }
+    }
+  }
+}

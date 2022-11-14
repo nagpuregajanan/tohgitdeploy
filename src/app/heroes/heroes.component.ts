@@ -14,6 +14,7 @@ export class HeroesComponent implements OnInit {
 	constructor(private heroService: HeroService, private ms: MessageService) { }
 
 	heroes: Hero[] = [];
+	showValidation: boolean = false;
 
 	ngOnInit(): void {
 		this.getHeroes();
@@ -30,7 +31,12 @@ export class HeroesComponent implements OnInit {
 
 	addHero(heroName: string): void {
 		const name: string = heroName.trim();
-		if (!name) { return; }
+		if (!name) {
+			this.showValidation = true;
+			return;
+		}
+		this.showValidation = false;
+
 		this.heroService.addHero({ name } as Hero).subscribe(hero => this.heroes.push(hero));
 	}
 

@@ -3,6 +3,8 @@
 <div>
 	<label for="new-hero">Hero Name:</label>
 	<input id="new-hero" #heroName>
+	<span class="add-hero-val" *ngIf="showValidation">Enter hero name.</span>
+	<br>
 
 	<button type="button" class="add-button" (click)="addHero(heroName.value);heroName.value=''">Add Hero</button>
 
